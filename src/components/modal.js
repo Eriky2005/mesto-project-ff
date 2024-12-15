@@ -1,18 +1,13 @@
 function openModal(popupElement) {
     popupElement.classList.add('popup_is-opened');
     document.addEventListener('keydown', closePopupEsc);
-    document.querySelectorAll('.popup').forEach(popup => {
-        popup.addEventListener('click', closePopupOverlay);
-    });
+    popupElement.addEventListener('click',closePopupOverlay);
 }
 
 function closeModal(popupElement) {
     popupElement.classList.remove('popup_is-opened');
     document.removeEventListener('keydown', closePopupEsc);
     popupElement.classList.add('popup_is-animated');
-    document.querySelectorAll('.popup').forEach(popup => {
-        popup.removeEventListener('click', closePopupOverlay);
-    });
 }
 
 function closePopupEsc(evt){
