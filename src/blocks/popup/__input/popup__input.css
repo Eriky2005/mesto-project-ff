@@ -14,6 +14,29 @@
   margin-bottom: 0;
 }
 
+.popup__input_type_error {
+  border-bottom: 1px solid red;
+}
+
+.popup__input-error {
+  color: red;
+  font-size: 12px;
+  display: none;
+}
+
+.popup__error_visible {
+  display: block;
+}
+
+.popup__button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popup__button_disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
 @media screen and (max-width: 568px) {
   .popup__title {
     font-size: 12px;
