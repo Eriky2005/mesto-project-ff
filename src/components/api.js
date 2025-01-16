@@ -33,10 +33,6 @@ const getInitialCards = () => {
 };
 
 const updateUser = (name, about) => {
-    const popupTypeEdit = document.querySelector('.popup_type_edit');
-    const popupButton = popupTypeEdit.querySelector('.popup__button');
-    popupButton.textContent = 'Сохранение...';
-    popupButton.disabled = true;
     return fetch(`${config.baseUrl}/users/me`, {
         method: 'PATCH',
         headers: config.headers,
@@ -50,18 +46,10 @@ const updateUser = (name, about) => {
                 return res.json();
             }
             return Promise.reject(`Ошибка: ${res.status}`);
-        })
-        .finally(() => {
-            popupButton.textContent = 'Сохранить';
-            popupButton.disabled = false;
         });
 };
 
 const addNewCard = (name, link) => {
-    const popupTypeNewCard = document.querySelector('.popup_type_new-card');
-    const popupButton = popupTypeNewCard.querySelector('.popup__button');
-    popupButton.textContent = 'Сохранение...';
-    popupButton.disabled = true;
     return fetch(`${config.baseUrl}/cards`, {
         method: 'POST',
         headers: config.headers,
@@ -75,10 +63,6 @@ const addNewCard = (name, link) => {
                 return res.json();
             }
             return Promise.reject(`Ошибка: ${res.status}`);
-        })
-        .finally(() => {
-            popupButton.textContent = 'Сохранить';
-            popupButton.disabled = false;
         });
 };
 
@@ -122,10 +106,6 @@ const deleteLike = (cardId) => {
 };
 
 const updateUserAvatar = (avatar) => {
-    const popupTypeNewAvatar = document.querySelector('.popup_type_new-avatar');
-    const popupButton = popupTypeNewAvatar.querySelector('.popup__button');
-    popupButton.textContent = 'Сохранение...';
-    popupButton.disabled = true;
     return fetch(`${config.baseUrl}/users/me/avatar`, {
         method: 'PATCH',
         headers: config.headers,
@@ -136,10 +116,6 @@ const updateUserAvatar = (avatar) => {
                 return res.json();
             }
             return Promise.reject(`Ошибка: ${res.status}`);
-        })
-        .finally(() => {
-            popupButton.textContent = 'Сохранить';
-            popupButton.disabled = false;
         });
 };
 
